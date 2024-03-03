@@ -34,7 +34,7 @@ const renderMovies = (array, node) => {
     moviesClone.querySelector(".js-movies-time").textContent =
       runtimeHourAndMin(movie.runtime);
     moviesClone.querySelector(".js-movies-categories").textContent =
-      movie.Categories.replaceAll("|", ", ").slice(0, 22);
+      movie.Categories.replaceAll("|", ", ");
 
     moviesClone.querySelector(".js-modal-btn").dataset.imdbId = movie.imdb_id;
 
@@ -68,7 +68,7 @@ const moviesRenderModal = (findMovies) => {
     findMovies.summary.split(" ").length > 10
       ? findMovies.summary.split(" ").slice(0, 80).join(" ")
       : findMovies.summary;
-  elModalCatigory.href = `https://www.imdb.com/title/${findMovies.imdb_id}/`;
+  elModalLink.href = `https://www.imdb.com/title/${findMovies.imdb_id}/`;
 };
 
 elResult.addEventListener("click", (evt) => {
